@@ -1,7 +1,9 @@
 - https://psicologacautriasantos.com/
 
 - Pegar paleta hexadecimal do site da psicóloga
-- Ver tabela bootstrap para página de agendamentos - Grid
+- Procurar template para front
 - Fontes: observar peso das fontes para estar de acordo com site dela
  - Poppins: https://fonts.google.com/specimen/Poppins
  - Raleway: https://fonts.google.com/specimen/Raleway
+
+- Alt + Shift + F = formatador do PHP Intelephense
