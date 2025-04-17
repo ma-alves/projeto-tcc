@@ -19,7 +19,7 @@ $linhas = mysqli_num_rows($resultado_consulta);
 if ($linhas == 1) {
 
   echo "<script> 
-					alert ('Login ja cadastrado. Tente outro!') 
+					alert ('E-mail já cadastrado. Por favor, utilize um e-mail diferente.') 
 		      </script>";
 
   echo "<script> 
@@ -41,7 +41,7 @@ if ($linhas == 1) {
 
   if ($resultado_cadastrar == true) {
     echo "<script> 
-					alert ('Cadastro feito com sucesso.') 
+					alert ('Cadastro realizado com sucesso!') 
 				  </script>";
 
     echo "<script> 
@@ -49,7 +49,7 @@ if ($linhas == 1) {
 				  </script>";
   } else {
     echo "<script> 
-					alert ('Ocorreu um erro no servidor. Tente novamente.')
+					alert ('Cadastro não realizado. Tente novamente.')
 			     </script>";
     echo "<script> 
 					location.href = ('cadastra_pac.php') 

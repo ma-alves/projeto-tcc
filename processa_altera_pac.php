@@ -34,7 +34,7 @@ if ($linhas == 1) {
 
     if ($sql_resultado_alteracao == true) {
         echo "<script>
-				alert('Alterações feitas com sucesso!')
+				alert('Perfil editado com sucesso!')
 			  </script>";
         echo "<script> 
 				location.href = ('index.php') 

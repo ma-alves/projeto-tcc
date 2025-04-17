@@ -5,5 +5,6 @@
 - Fontes: observar peso das fontes para estar de acordo com site dela
  - Poppins: https://fonts.google.com/specimen/Poppins
  - Raleway: https://fonts.google.com/specimen/Raleway
+- Botão de cancelar alterações em altera_pac.PHP
 
 - Alt + Shift + F = formatador do PHP Intelephense
