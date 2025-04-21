@@ -12,9 +12,9 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="processa_login.php" method="POST">
-            <input type="email" name="email_pac" placeholder="Email" required>
-            <input type="password" name="senha_pac" placeholder="Senha" required>
+        <form action="processa_login_psi.php" method="POST">
+            <input type="email" name="email_psi" placeholder="Email" required>
+            <input type="password" name="senha_psi" placeholder="Senha" required>
             <button type="submit">Entrar</button>
         </form>
     </div>
