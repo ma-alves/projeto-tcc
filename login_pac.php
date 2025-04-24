@@ -15,7 +15,7 @@
         <form action="processa_login_pac.php" method="POST">
             <input type="email" name="email_pac" placeholder="Email" required>
             <input type="password" name="senha_pac" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+            <input type='submit' value='Entrar'>
         </form>
     </div>
 </body>

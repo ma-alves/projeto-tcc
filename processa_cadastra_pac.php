@@ -1,23 +1,23 @@
 <?php
-$env = parse_ini_file('.env');
-$senha_db = $env["SENHA_DB"];
-$db = $env["DB"];
+require "db.php";
+// $env = parse_ini_file('.env');
+// $senha_db = $env["SENHA_DB"];
+// $db = $env["DB"];
 
-$conectar = mysqli_connect("localhost", "root", $senha_db, $db);
+// $conectar = mysqli_connect("localhost", "root", $senha_db, $db);
 
 $nome_pac = $_POST["nome_pac"];
 $telefone_pac = $_POST["telefone_pac"];
 $email_pac = $_POST["email_pac"];
-$senha_pac = $_POST["senha_pac"];
+$senha_pac = password_hash($_POST["senha_pac"], PASSWORD_DEFAULT);
 
-$sql_consulta = "SELECT email_pac FROM pacientes WHERE email_pac = '$email_pac'";
+$stmt = $pdo->prepare("SELECT email_pac FROM pacientes WHERE email_pac = '$email_pac'");
+$stmt->execute();
+$linhas = $stmt->rowCount();
 
-$resultado_consulta = mysqli_query($conectar, $sql_consulta);
-
-$linhas = mysqli_num_rows($resultado_consulta);
+// $resultado_consulta = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 if ($linhas == 1) {
-
   echo "<script> 
 					alert ('E-mail já cadastrado. Por favor, utilize um e-mail diferente.') 
 		      </script>";
@@ -26,20 +26,13 @@ if ($linhas == 1) {
 					location.href = ('cadastra_pac.php') 
 			  </script>";
 } else {
-  $sql_cadastrar = "INSERT INTO pacientes 
-                            (nome_pac,
-                            telefone_pac,
-                            email_pac,
-                            senha_pac)
-                      VALUES 
-                            ('$nome_pac',
-                            '$telefone_pac',
-                            '$email_pac',
-                            '$senha_pac')";
+  $stmt = $pdo->prepare("INSERT INTO pacientes (nome_pac, telefone_pac, email_pac, senha_pac)
+                        VALUES ('$nome_pac','$telefone_pac','$email_pac','$senha_pac')");
+  $stmt->execute([$nome_pac, $telefone_pac, $email_pac, $senha_pac]);
 
-  $resultado_cadastrar = mysqli_query($conectar, $sql_cadastrar);
+  // $resultado_cadastrar = mysqli_query($conectar, $sql_cadastrar);
 
-  if ($resultado_cadastrar == true) {
+  if ($stmt == true) {
     echo "<script> 
 					alert ('Cadastro realizado com sucesso!') 
 				  </script>";
