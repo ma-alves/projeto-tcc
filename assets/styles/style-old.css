@@ -4,16 +4,10 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  .baskervville-regular {
-    font-family: "Baskervville", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
   
   body {
-    font-family: "Baskervville", serif;
-    background-color: #9FD6BE;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7fb;
     color: #333;
     line-height: 1.6;
   }
@@ -21,87 +15,37 @@
   .container {
     max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
+    padding: 0 2rem;
   }
   
   /* Header */
   header {
     background-color: #fff;
-    padding: 1px 1px;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
   }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: #85865C;
-  }
-
-  .logo img {
-    height: 90px;
-    padding: 10px 0 0 10px;
+  
+  header h1 {
+    color: #4b7bec;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
   
   nav ul {
     display: flex;
     list-style: none;
-    gap: 3rem;
-    margin: 45px;
-    padding: 0;
+    gap: 2rem;
   }
   
-  nav ul li a {
+  nav a {
     text-decoration: none;
-    font-weight: 400;
-  }
-
-  .link-btn {
-    --clr-font-main: hsla(0 0% 20% / 100);
-    --btn-bg-1: rgba(214, 203, 129, 0.466);
-    --btn-bg-2: rgba(60, 88, 62, 0.288);
-    --btn-bg-color: rgba(255, 255, 255, 0.849);
-    --radii: 0.5em;
-    cursor: pointer;
-    padding: 0.9em 1.4em;
-    min-width: 120px;
-    min-height: 44px;
-    font-size: var(--size, 1rem);
+    color: #4b7bec;
     font-weight: 500;
-    transition: 0.8s;
-    background-size: 280% auto;
-    background-image: linear-gradient(
-      325deg,
-      var(--btn-bg-2) 0%,
-      var(--btn-bg-1) 55%,
-      var(--btn-bg-2) 90%
-    );
-    border: none;
-    border-radius: var(--radii);
-    color: var(--btn-bg-color);
-    box-shadow:
-      0px 0px 20px rgba(36, 78, 39, 0.342),
-      inset 4px 4px 8px rgba(15, 59, 18, 0.473),
-      inset -4px -4px 8px rgba(214, 203, 129, 0.384);
   }
   
-  .link-btn:hover {
-    background-position: right top;
-  }
-  
-  .link-btn:is(:focus, :focus-visible, :active) {
-    outline: none;
-    box-shadow:
-      0 0 0 3px var(--btn-bg-color),
-      0 0 0 6px var(--btn-bg-2);
-  }
-  
-  header h1 {
-    color: #ffffff;
-    padding: 10px;
-  }
-
   /* Hero */
   .hero {
     background: url('https://images.unsplash.com/photo-1600180758890-6c1d73d5532e') no-repeat center center/cover;

@@ -5,30 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clínica Equilíbrio Mental</title>
-    <link rel="stylesheet" href="./assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
 </head>
 
 <body>
-<header>
 
     <!-- Cabeçalho -->
     <header>
-        <nav class="topo">
-            <div class="logo">
-                <img src="./assets/imagens/Logo_semfundo.png-branca2.png">
-            </div>
-            <div class="menu">
+        <div class="container">
+            <h1>Clínica Equilíbrio Mental</h1>
+            <nav>
                 <ul>
-                    <li><a href="#inicio" class="link-btn">Início</a></li>
-                    <li><a href="#pacotes" class="link-btn">Pacotes</a></li>
-                    <li><a href="#agendamento" class="link-btn">Agendamento</a></li>
-                    <li><a href="#login" class="link-btn">Login</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#pacotes">Pacotes</a></li>
+                    <li><a href="#agendamento">Agendamento</a></li>
+                    <li><a href="#login">Login</a></li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero -->
