@@ -7,15 +7,15 @@ session_start();
 
 // $conectar = mysqli_connect("localhost", "root", $senha_db, $db);
 
-$email = $_POST["email_psi"];
-$senha = $_POST["senha_psi"];
+$email = $_POST["email"];
+$senha = $_POST["senha"];
 
 $stmt = $pdo->prepare('SELECT * FROM psicologos WHERE email = ?');
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 if ($user && password_verify($senha, $user['senha'])) {
   $_SESSION['id_psi'] = $user['id'];
-  echo "<script>location.href = ('administracao.php')</script>"; %alterar, botar pra ir pro perfil
+  echo "<script>location.href = ('administracao.php')</script>";
 } else {
   echo "<script>alert ('E-mail ou senha incorretos. Tente novamente.')</script>";
   echo "<script>location.href = ('index.php')</script>";

@@ -82,14 +82,14 @@ session_start();
                     <p>Nome: </p>
                 </td>
                 <td>
-                    <p> <input type="text" name="nome_pac" required> </p>
+                    <p> <input type="text" name="nome" required> </p>
                 </td>
             <tr>
                 <td>
                     <p>Telefone: </p>
                 </td>
                 <td>
-                    <p> <input type="text" name="telefone_pac" required> </p>
+                    <p> <input type="text" name="telefone" required> </p>
                 </td>
             </tr>
             <tr>
@@ -97,7 +97,7 @@ session_start();
                     <p>E-mail: </p>
                 </td>
                 <td>
-                    <p> <input type="email" name="email_pac" required> </p>
+                    <p> <input type="email" name="email" required> </p>
                 </td>
             </tr>
             <tr>
@@ -107,7 +107,7 @@ session_start();
             </td>
             <td>
                 <p>
-                    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required>
                 </p>
             </td>

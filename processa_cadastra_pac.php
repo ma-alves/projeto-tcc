@@ -1,21 +1,14 @@
 <?php
 require "db.php";
-// $env = parse_ini_file('.env');
-// $senha_db = $env["SENHA_DB"];
-// $db = $env["DB"];
 
-// $conectar = mysqli_connect("localhost", "root", $senha_db, $db);
+$nome = $_POST["nome"];
+$telefone = $_POST["telefone"];
+$email = $_POST["email"];
+$senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
-$nome_pac = $_POST["nome_pac"];
-$telefone_pac = $_POST["telefone_pac"];
-$email_pac = $_POST["email_pac"];
-$senha_pac = password_hash($_POST["senha_pac"], PASSWORD_DEFAULT);
-
-$stmt = $pdo->prepare("SELECT email_pac FROM pacientes WHERE email_pac = '$email_pac'");
+$stmt = $pdo->prepare("SELECT email FROM pacientes WHERE email = '$email'");
 $stmt->execute();
 $linhas = $stmt->rowCount();
-
-// $resultado_consulta = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 if ($linhas == 1) {
   echo "<script> 
@@ -26,11 +19,10 @@ if ($linhas == 1) {
 					location.href = ('cadastra_pac.php') 
 			  </script>";
 } else {
-  $stmt = $pdo->prepare("INSERT INTO pacientes (nome_pac, telefone_pac, email_pac, senha_pac)
-                        VALUES ('$nome_pac','$telefone_pac','$email_pac','$senha_pac')");
-  $stmt->execute([$nome_pac, $telefone_pac, $email_pac, $senha_pac]);
-
-  // $resultado_cadastrar = mysqli_query($conectar, $sql_cadastrar);
+  // SEGUIR ESTE PADRÃO DE INSERT
+  $stmt = $pdo->prepare("INSERT INTO pacientes (nome, telefone, email, senha)
+                        VALUES (?, ?, ?, ?)");
+  $stmt->execute([$nome, $telefone, $email, $senha]);
 
   if ($stmt == true) {
     echo "<script> 
@@ -38,7 +30,7 @@ if ($linhas == 1) {
 				  </script>";
 
     echo "<script> 
-					location.href = ('cadastra_pac.php') 
+					location.href = ('login_pac.php') 
 				  </script>";
   } else {
     echo "<script> 

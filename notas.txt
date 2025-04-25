@@ -1,10 +1,7 @@
 - https://psicologacautriasantos.com/
 
-- Pegar paleta hexadecimal do site da psicóloga
-- Procurar template para front
-- Fontes: observar peso das fontes para estar de acordo com site dela
- - Poppins: https://fonts.google.com/specimen/Poppins
- - Raleway: https://fonts.google.com/specimen/Raleway
+- Configurar start_session em index e verificar sessões
+- Alterar altera_pac e a fins
 - Botão de cancelar alterações em altera_pac.PHP
 
 - Alt + Shift + F = formatador do PHP Intelephense

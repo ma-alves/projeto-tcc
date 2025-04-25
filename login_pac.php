@@ -13,8 +13,8 @@
     <div class="login-container">
         <h2>Login Paciente</h2>
         <form action="processa_login_pac.php" method="POST">
-            <input type="email" name="email_pac" placeholder="Email" required>
-            <input type="password" name="senha_pac" placeholder="Senha" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
             <input type='submit' value='Entrar'>
         </form>
     </div>
