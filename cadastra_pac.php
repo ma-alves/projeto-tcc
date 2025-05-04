@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/layout.css">
-    
+
     <!-- Validador de senha -->
     <script>
         var myInput = document.getElementById("psw");
@@ -70,55 +70,28 @@ session_start();
             }
         }
     </script>
-    
+
     <title>Cautria Santos</title>
 </head>
 
 <body>
     <form method="post" action="processa_cadastra_pac.php">
-        <table>
-            <tr>
-                <td>
-                    <p>Nome: </p>
-                </td>
-                <td>
-                    <p> <input type="text" name="nome" required> </p>
-                </td>
-            <tr>
-                <td>
-                    <p>Telefone: </p>
-                </td>
-                <td>
-                    <p> <input type="text" name="telefone" required> </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>E-mail: </p>
-                </td>
-                <td>
-                    <p> <input type="email" name="email" required> </p>
-                </td>
-            </tr>
-            <tr>
-            </tr>
-            <td>
-                <p>Senha: </p>
-            </td>
-            <td>
-                <p>
-                    <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required>
-                </p>
-            </td>
-            </tr>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <p><input type="submit" value="Cadastrar"></p>
-                </td>
-            </tr>
-        </table>
+        <p>Nome: </p>
+        <p><input type="text" name="nome" required></p>
+
+        <p>Telefone: </p>
+        <p><input type="text" name="telefone" required></p>
+
+        <p>E-mail: </p>
+        <p><input type="email" name="email" required></p>
+
+        <p>Senha: </p>
+        <p>
+            <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required>
+        </p>
+
+        <p><input type="submit" value="Cadastrar"></p>
     </form>
 </body>
 

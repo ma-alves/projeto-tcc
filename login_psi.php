@@ -15,7 +15,7 @@
         <form action="processa_login_psi.php" method="POST">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
+            <input type='submit' value='Entrar'>
         </form>
     </div>
 </body>

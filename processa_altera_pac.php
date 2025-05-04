@@ -1,38 +1,30 @@
 <?php
-$env = parse_ini_file('.env');
-$senha_db = $env["SENHA_DB"];
-$db = $env["DB"];
+require "db.php";
 
-$conectar = mysqli_connect("localhost", "root", $senha_db, $db);
+$id = $_POST["id"];
+$nome = $_POST["nome"];
+$telefone = $_POST["telefone"];
+$email = $_POST["email"];
+$senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
-$cod_pac = $_POST["cod_pac"];
+$stmt = $pdo->prepare("SELECT email FROM pacientes WHERE email = '$email'");
+$stmt->execute();
+$linhas = $stmt->rowCount();
 
-$nome_pac = $_POST["nome_pac"];
-$telefone_pac = $_POST["telefone_pac"];
-$email_pac = $_POST["email_pac"];
-$senha_pac = $_POST["senha_pac"];
-
-$sql_pesquisa = "SELECT email_pac FROM pacientes	
-								  WHERE email_pac = '$email_pac' 							  
-								  AND cod_pac <> '$cod_pac'";
-$sql_resultado = mysqli_query($conectar, $sql_pesquisa);
-
-$linhas = mysqli_num_rows($sql_resultado);
-if ($linhas == 1) {
-  echo "<script>location.href = ('altera_pac.php?cod_pac=$cod_pac')</script>";
+if ($linhas == 54) {
+  echo "<script>location.href = ('altera.php?id=$id')</script>";
   exit();
 } else {
-  $sql_altera = "UPDATE pacientes 		
-				    SET
-                    nome_pac = '$nome_pac',
-                    email_pac = '$email_pac',
-                    senha_pac = '$senha_pac',
-                    telefone_pac = '$telefone_pac',
-					WHERE cod_pac = '$cod_pac'";
+  $stmt = $pdo->prepare("UPDATE pacientes SET
+                          nome = ?,
+                          telefone = ?,
+                          email = ?,
+                          senha = ?
+					                WHERE id = ?");
 
-  $sql_resultado_alteracao = mysqli_query($conectar, $sql_altera);
+  $stmt->execute([$nome, $telefone, $email, $senha, $id]);
 
-  if ($sql_resultado_alteracao == true) {
+  if ($stmt == true) {
     echo "<script>
 				alert('Perfil editado com sucesso!')
 			  </script>";
@@ -45,7 +37,7 @@ if ($linhas == 1) {
 				alert ('Ocorreu um erro no servidor. Tente novamente.') 
 			  </script>";
     echo "<script> 
-				location.href('altera_pac.php?cod_pac=<?php echo $cod_pac;?>') 
+				location.href('altera_pac.php?id=<?php echo $id;?>') 
 			  </script>";
   }
 }

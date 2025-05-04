@@ -1,3 +1,7 @@
+<?php
+session_start();
+require "db.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,7 +29,14 @@
                     <li><a href="#inicio" class="link-btn">Início</a></li>
                     <li><a href="#pacotes" class="link-btn">Pacotes</a></li>
                     <li><a href="#agendamento" class="link-btn">Agendamento</a></li>
-                    <li><a href="#login" class="link-btn">Login</a></li>
+                    <?php
+                    // mudar session id_psi para outro lugar
+                    if (isset($_SESSION["id_pac"]) || isset($_SESSION["id_psi"])) {
+                        echo '<li><a href="exibe_pac.php?id=' . $_SESSION['id_pac'] . '" class="link-btn">Perfil</a></li>';
+                    } else { 
+                        echo '<li><a href="#login" class="link-btn">Login</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -96,11 +107,11 @@
         <div class="container">
             <h3>Área do Paciente</h3>
             <form action="processa_login_pac.php" method="POST">
-                <label for="email_pac">Email</label>
-                <input type="email" id="email_pac" name="email_pac" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
 
-                <label for="senha_pac">Senha</label>
-                <input type="password" id="senha_pac" name="senha_pac" required />
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required />
 
                 <button type="submit">Entrar</button>
             </form>
