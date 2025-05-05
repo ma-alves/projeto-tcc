@@ -1,7 +1,9 @@
 - https://psicologacautriasantos.com/
 
+- Criar agendar consulta e a fins
 - Colocar validador de telefone em cadastra e altera
-- Configurar start_session em index e verificar sessões
-- 
+- Quase pronto (Configurar start_session em index e verificar sessões)
+- Criar alterar psi
+- Criar listagens
 
 - Alt + Shift + F = formatador do PHP Intelephense
