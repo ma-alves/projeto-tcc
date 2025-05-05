@@ -30,9 +30,10 @@ require "db.php";
                     <li><a href="#pacotes" class="link-btn">Pacotes</a></li>
                     <li><a href="#agendamento" class="link-btn">Agendamento</a></li>
                     <?php
-                    // mudar session id_psi para outro lugar
-                    if (isset($_SESSION["id_pac"]) || isset($_SESSION["id_psi"])) {
+                    if (isset($_SESSION["id_pac"])) {
                         echo '<li><a href="exibe_pac.php?id=' . $_SESSION['id_pac'] . '" class="link-btn">Perfil</a></li>';
+                    } elseif (isset($_SESSION["id_psi"])) {
+                        echo '<li><a href="exibe_psi.php?id=' . $_SESSION['id_psi'] . '" class="link-btn">Perfil</a></li>';
                     } else { 
                         echo '<li><a href="#login" class="link-btn">Login</a></li>';
                     }

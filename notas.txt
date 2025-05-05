@@ -2,7 +2,6 @@
 
 - Colocar validador de telefone em cadastra e altera
 - Configurar start_session em index e verificar sessões
-- Alterar altera_pac e a fins
-- Botão de cancelar alterações em altera_pac.PHP
+- 
 
 - Alt + Shift + F = formatador do PHP Intelephense
