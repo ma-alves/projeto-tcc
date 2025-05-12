@@ -1,10 +1,7 @@
 <?php
-if (isset($_SESSION["id_pac"])) {
-	echo $_SESSION["id_pac"];
-} elseif (isset($_SESSION["id_psi"])) {
-	echo $_SESSION["id_psi"];
+if (!isset($_SESSION["admin"])) {
+	echo "<script>alert('Acesso restrito!.')</script>";
+	echo "<script>location.href = ('index.php') </script>";
 } else {
-	echo "<script>alert('Acesso negado! É preciso estar logado para acessar esta página.')</script>";
-	echo "<script>location.href = ('login_pac.php') </script>";
 }
 ?>
