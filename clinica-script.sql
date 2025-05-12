@@ -77,3 +77,5 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `clinica`.`psicologos` (`id`, `nome`, `crp`, `email`, `senha`, `admin`) VALUES ('1', 'Cautria', '12345', 'cautria@email.com', 'Cautria123', '1');
