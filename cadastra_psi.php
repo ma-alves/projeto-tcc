@@ -79,6 +79,9 @@ session_start();
         <p>Nome: </p>
         <p><input type="text" name="nome" required></p>
 
+        <p>CRP: </p>
+        <p><input type="text" name="crp" required></p>
+
         <p>E-mail: </p>
         <p><input type="email" name="email" required></p>
 

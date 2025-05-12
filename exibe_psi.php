@@ -14,7 +14,8 @@ if (!$_SESSION["admin"]) {
     $user = $stmt->fetch();
 
     echo "<p>Nome: $user[1]</p>";
-    echo "<p>Email: $user[2]</p>";
+    echo "<p>CRP: $user[2]</p>";
+    echo "<p>Email: $user[3]</p>";
 
     // Depois adicionar consultas marcadas e caso não hajam
 }

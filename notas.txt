@@ -7,3 +7,7 @@
 - Criar listagens
 
 - Alt + Shift + F = formatador do PHP Intelephense
+
+-- O BANCO DE DADOS JÁ VEM COM UM ADM CRIADO, só logar como psicologo na área do profissional
+ - Email: cautria@email.com
+ - Senha: Cautria123
