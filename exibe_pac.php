@@ -18,3 +18,5 @@ if ($_SESSION["admin"] || $_SESSION["id_pac"] == $_GET["id"]) {
     echo "<script>alert('Acesso restrito.')</script>";
     echo "<script>location.href = ('index.php')</script>";
 }
+?>
+<p><a href="logout.php">Sair</a></p>

@@ -17,5 +17,18 @@ if (!$_SESSION["admin"]) {
     echo "<p>CRP: $user[2]</p>";
     echo "<p>Email: $user[3]</p>";
 
-    // Depois adicionar consultas marcadas e caso não hajam
+    $stmt = $pdo->prepare('SELECT * FROM consultas WHERE psicologos_id = ?');
+    $stmt->execute([$id]);
+    while ($consultas = $stmt->fetch()) {
+        if (!$consultas[1]) {
+            echo "<p>Data: $consultas[3]</p>";
+            echo "<p>Hora: $consultas[4]</p>";
+        } else {
+            echo "<p>Paciente: $consultas[1]</p>";
+            echo "<p>Data: $consultas[3]</p>";
+            echo "<p>Hora: $consultas[4]</p>";
+        }
+    };
 }
+?>
+<p><a href="logout.php">Sair</a></p>

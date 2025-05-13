@@ -15,15 +15,15 @@ require "valida_permissao.php";
 </head>
 
 <body>
-    <form method="post" action="processa_cadastra_psi.php">
+    <form method="post" action="processa_cria_consulta.php">
         <p>Data: </p>
-        <p><input type="text" name="nome" required></p>
+        <p><input type="date" name="data" required></p>
 
         <p>Hora: </p>
-        <p><input type="text" name="hora" required></p>
+        <p><input type="time" name="hora" required></p>
 
         <p>Valor: </p>
-        <p><input type="number" name="valor" id=""></p>
+        <p><input type="number" name="valor" value="90" required></p>
 
         <p><input type="submit" value="Cadastrar"></p>
     </form>

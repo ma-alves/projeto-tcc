@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "db.php";
+require "valida_permissao.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,18 +18,19 @@ require "db.php";
     <?php
     $id = $_GET["id"];
 
-    $stmt = $pdo->prepare("SELECT nome, telefone, email, senha
-							 FROM pacientes WHERE id = '$id'");
+    $stmt = $pdo->prepare("SELECT nome, crp, email, senha
+							 FROM psicologos WHERE id = '$id'");
     $stmt->execute();
     $registro = $stmt->fetch();
+
     ?>
-    <form action="processa_altera_pac.php" method="post">
+    <form action="processa_altera_psi.php" method="post">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
         <p>
             Nome: <input type="text" name="nome" value="<?php echo "$registro[0]"; ?>" required>
         </p>
         <p>
-            Telefone: <input type="text" name="telefone" value="<?php echo "$registro[1]"; ?>" required>
+            CRP: <input type="text" name="crp" value="<?php echo "$registro[1]"; ?>" required>
         </p>
         <p>
             Email: <input type="email" name="email" value="<?php echo "$registro[2]"; ?>" required>

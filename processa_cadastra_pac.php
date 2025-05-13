@@ -20,7 +20,7 @@ if ($linhas == 1) {
 
   if ($stmt == true) {
     echo "<script>alert ('Cadastro realizado com sucesso!')</script>";
-    echo "<script>location.href = ('index.php#login.php')</script>";
+    echo "<script>location.href = ('index.php#login')</script>";
   } else {
     echo "<script>alert ('Cadastro não realizado. Tente novamente.')</script>";
     echo "<script>location.href = ('cadastra_pac.php')</script>";
