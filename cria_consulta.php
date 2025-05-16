@@ -1,6 +1,6 @@
 <?php
-require "db.php";
 session_start();
+require "db.php";
 require "valida_permissao.php";
 ?>
 <!DOCTYPE html>

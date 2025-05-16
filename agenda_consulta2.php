@@ -1,0 +1,135 @@
+<?php
+session_start();
+require "db.php";
+require "valida_login.php";
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cautria Santos</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <?php include "menu.php"; ?>
+
+    <!-- Agendamento -->
+    <?php
+    $stmt = $pdo->prepare(
+        "SELECT c.data, c.hora, p.nome, p.crp FROM consultas c JOIN psicologos p ON c.psicologos_id = p.id
+         WHERE pacientes_id IS NULL ORDER BY c.data, c.hora"
+    );
+    $stmt->execute();
+    $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $consultasPorData = [];
+    foreach ($consultas as $consulta) {
+        $data = $consulta['data'];
+        if (!isset($consultasPorData[$data])) {
+            $consultasPorData[$data] = [];
+        }
+        $consultasPorData[$data][] = $consulta;
+    }
+    ?>
+
+    <style>
+        .calendario {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .dia {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #3a7bd5;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .consulta-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .consulta-item:last-child {
+            border-bottom: none;
+        }
+
+        .hora {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .psicologo {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .sem-consultas {
+            color: #999;
+            font-style: italic;
+            padding: 10px 0;
+        }
+    </style>
+
+    <div class="calendario">
+        <?php if (empty($consultasPorData)): ?>
+            <div class="sem-consultas">Nenhuma consulta disponível no momento.</div>
+        <?php else: ?>
+            <?php foreach ($consultasPorData as $data => $consultasDoDia): ?>
+                <div class="dia">
+                    <div class="data-header">
+                        <?= date('d/m/Y', strtotime($data)) ?> -
+                        <?= date('l', strtotime($data)) ?>
+                    </div>
+
+                    <?php if (empty($consultasDoDia)): ?>
+                        <div class="sem-consultas">Nenhum horário disponível</div>
+                    <?php else: ?>
+                        <?php foreach ($consultasDoDia as $consulta): ?>
+                            <div class="consulta-item">
+                                <span class="hora">
+                                    <?= substr($consulta['hora'], 0, 5) ?>
+                                </span>
+                                <span class="psicologo">
+                                    <?= htmlspecialchars($consulta['nome']) ?> (CRP: <?= htmlspecialchars($consulta['crp']) ?>)
+                                </span>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

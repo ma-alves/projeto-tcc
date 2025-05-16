@@ -8,48 +8,25 @@ require "db.php";
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clínica Equilíbrio Mental</title>
+    <title>Cautria Santos</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<header>
-
-    <!-- Cabeçalho -->
-    <header>
-        <nav class="topo">
-            <div class="logo">
-                <img src="./assets/imagens/Logo_semfundo.png-branca2.png">
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#inicio" class="link-btn">Início</a></li>
-                    <li><a href="#pacotes" class="link-btn">Pacotes</a></li>
-                    <li><a href="#agendamento" class="link-btn">Agendamento</a></li>
-                    <?php
-                    if (isset($_SESSION["id_pac"])) {
-                        echo '<li><a href="exibe_pac.php?id=' . $_SESSION['id_pac'] . '" class="link-btn">Perfil</a></li>';
-                    } elseif (isset($_SESSION["id_psi"])) {
-                        echo '<li><a href="exibe_psi.php?id=' . $_SESSION['id_psi'] . '" class="link-btn">Perfil</a></li>';
-                    } else { 
-                        echo '<li><a href="#login" class="link-btn">Login</a></li>';
-                    }
-                    ?>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <?php include "menu.php"?>
 
     <!-- Hero -->
     <section id="inicio" class="hero">
         <div class="overlay">
             <div class="container">
-                <h2>Bem-vindo à Clínica Equilíbrio Mental</h2>
+                <h2>Bem-vindo!!</h2>
                 <p>Cuidado psicológico com empatia, acolhimento e profissionalismo</p>
-                <a href="#agendamento" class="btn">Agendar Consulta</a>
+                <a href="#agendamento" class="btn" id="agenda-con" title="deixe de ser lelé da cuca!">Agendar Consulta</a>
             </div>
         </div>
     </section>
@@ -60,26 +37,24 @@ require "db.php";
             <h3>Pacotes de Atendimento</h3>
             <div class="pacotes-grid">
                 <div class="pacote">
-                    <img src="https://images.unsplash.com/photo-1588776814546-ec70c0b1fe49" alt="Consulta individual">
                     <h4>Consulta Individual</h4>
                     <p>Atendimento único, ideal para avaliação ou suporte pontual.</p>
-                    <span class="preco">R$ 150,00</span>
+                    <span class="preco">R$ ?</span>
                 </div>
                 <div class="pacote">
-                    <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb" alt="Pacote mensal">
                     <h4>Pacote Mensal (4 Sessões)</h4>
                     <p>Acompanhamento contínuo com sessões semanais.</p>
-                    <span class="preco">R$ 520,00</span>
+                    <span class="preco">R$ ?</span>
                 </div>
                 <div class="pacote">
-                    <img src="https://images.unsplash.com/photo-1573497019400-0427f2f5d3b2" alt="Terapia de casal">
-                    <h4>Terapia de Casal</h4>
-                    <p>Atendimento conjunto com foco em relacionamento saudável.</p>
-                    <span class="preco">R$ 200,00 por sessão</span>
+                    <h4>Pacote de 3 Meses (12 Sessões)</h4>
+                    <p>Atendimento de psicoterapia breve.</p>
+                    <span class="preco">R$ ?</span>
                 </div>
             </div>
         </div>
     </section>
+    <hr>
 
     <!-- Agendamento -->
     <section id="agendamento" class="agendamento-form">
@@ -117,6 +92,7 @@ require "db.php";
                 <button type="submit">Entrar</button>
             </form>
             <p class="cadastro-msg">Ainda não tem uma conta? <a href="cadastra_pac.php">Cadastre-se aqui</a></p>
+            <p class="cadastro-msg"><a href="">Esqueceu a senha?</a></p>
             <p class="cadastro-msg"><a href="login_psi.php">Área do Profissional</a></p>
         </div>
     </section>
@@ -124,10 +100,10 @@ require "db.php";
     <!-- Rodapé -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Clínica Equilíbrio Mental – Todos os direitos reservados.</p>
+            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

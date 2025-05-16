@@ -13,13 +13,13 @@
 
 body {
   font-family: "Baskervville", serif;
-  background-color: #9FD6BE;
+  background-color: #ffffff;
   color: #333;
   line-height: 1.6;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 80%;
   margin: auto;
   padding: 0 20px;
 }
@@ -52,12 +52,18 @@ nav ul {
   padding: 0;
 }
 
-nav ul li a {
+#menu-link {
   text-decoration: none;
   font-weight: 400;
+  color: #fff;  
+}
+#menu-link:hover {
+  transition: 0.4s;
+  color: #d1d1a6;
+  text-decoration: underline;
 }
 
-.link-btn {
+/* .link-btn {
   --clr-font-main: hsla(0 0% 20% / 100);
   --btn-bg-1: rgba(214, 203, 129, 0.466);
   --btn-bg-2: rgba(60, 88, 62, 0.288);
@@ -95,7 +101,7 @@ nav ul li a {
   box-shadow:
     0 0 0 3px var(--btn-bg-color),
     0 0 0 6px var(--btn-bg-2);
-}
+} */
 
 header h1 {
   color: #ffffff;
@@ -104,7 +110,7 @@ header h1 {
 
 /* Hero */
 .hero {
-  background: url('https://images.unsplash.com/photo-1600180758890-6c1d73d5532e') no-repeat center center/cover;
+  background-color: #72744e;
   height: 70vh;
   position: relative;
   display: flex;
@@ -113,7 +119,6 @@ header h1 {
 }
 
 .hero .overlay {
-  background-color: rgba(0,0,0,0.5);
   width: 100%;
   height: 100%;
   padding: 4rem 2rem;
@@ -133,7 +138,7 @@ header h1 {
 }
 
 .btn {
-  background-color: #4b7bec;
+  background-color: #85865C;
   color: white;
   padding: 0.8rem 2rem;
   text-decoration: none;
@@ -141,9 +146,14 @@ header h1 {
   transition: 0.3s;
 }
 
-.btn:hover {
-  background-color: #3a64d1;
+.btn #agenda-con {
+  border: #be9494;
 }
+
+.btn:hover {
+  background-color: #545532;
+}
+
 
 /* Pacotes */
 .pacotes {
@@ -154,7 +164,7 @@ header h1 {
 .pacotes h3 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #4b7bec;
+  color: #85865C;
 }
 
 .pacotes-grid {
@@ -178,11 +188,6 @@ header h1 {
   transform: translateY(-5px);
 }
 
-.pacote img {
-  width: 100%;
-  border-radius: 8px;
-}
-
 .pacote h4 {
   margin-top: 1rem;
   color: #333;
@@ -191,7 +196,7 @@ header h1 {
 .pacote .preco {
   display: block;
   margin-top: 0.5rem;
-  color: #4b7bec;
+  color: #85865C;
   font-weight: bold;
 }
 
@@ -205,7 +210,7 @@ header h1 {
 .agendamento-form h3,
 .login-form h3 {
   text-align: center;
-  color: #4b7bec;
+  color: #85865C;
   margin-bottom: 2rem;
 }
 
@@ -219,12 +224,12 @@ form {
 
 input {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #85865C;
   border-radius: 6px;
 }
 
 button {
-  background-color: #4b7bec;
+  background-color: #85865C;
   color: white;
   border: none;
   padding: 0.75rem;
@@ -234,9 +239,23 @@ button {
 }
 
 button:hover {
-  background-color: #355fd4;
+  background-color: #545532;
+  transition: 0.4s;
 }
 
 .cadastro-msg {
   text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+hr {
+  margin: auto;
+  max-width: 70%; 
+  border-color: #929e71;
+  border-style: groove;
+}
+
+footer {
+  background-color: #85865C;
 }

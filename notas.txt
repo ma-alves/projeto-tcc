@@ -1,19 +1,15 @@
 - https://psicologacautriasantos.com/
 
 A FAZER
+- Continuar agenda consulta
 - Adicionar consultas marcadas e não marcadas psis e pacientes
 - Criar agendar consulta para pacientes
 - Colocar validador de telefone em cadastra e altera
+- Tirar formulário de agendamento da index, pq tem que estar logado para agendar
+    ou trocar, não pode ficar do jeito que está
 
 RECADOS
 ! Cadastro de ADM normal em cadastra_psi.php
 
 OUTROS
 @Alt + Shift + F = formatador do PHP Intelephense
-
----
-
-***NÃO FUNCIONA MAIS*** 
-(-- O BANCO DE DADOS JÁ VEM COM UM ADM CRIADO, só logar como psicologo na área do profissional
- - Email: cautria@email.com
- - Senha: Cautria123)

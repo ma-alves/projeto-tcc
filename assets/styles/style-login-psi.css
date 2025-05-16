@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../imagens/background-login.jpg);
+    background-size: cover;
+    background-position: center;
+}
+container {
+    width: 420px;
+    background-color: transparent;
+}
