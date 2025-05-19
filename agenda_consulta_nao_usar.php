@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "db.php";
-require "valida_login.php"
+require "valida_login.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,32 +19,19 @@ require "valida_login.php"
 </head>
 
 <body>
-    <?php include "menu.php";
+    <?php include "menu.php"; ?>
 
-    $id = $_GET["id"];
-
-    if ($_SESSION["admin"] || $_SESSION["id_pac"] == $_GET["id"]) {
-        $stmt = $pdo->prepare('SELECT * FROM pacientes WHERE id = ?');
-        $stmt->execute([$id]);
-        $user = $stmt->fetch();
-
-        echo "<p>Nome: $user[1]</p>";
-        echo "<p>Telefone: $user[2]</p>";
-        echo "<p>Email: $user[3]</p>";
-        echo "<p><a href='altera_pac.php?id=$id'>Editar Perfil</a></p>";
-        echo "<p><a href='logout.php'>Sair</a></p>";
-    } else {
-        echo "<script>alert('Acesso restrito.')</script>";
-        echo "<script>location.href = ('index.php')</script>";
-    }
-
+    <!-- Agendamento -->
+    <?php
     $stmt = $pdo->prepare(
-        "SELECT * FROM consultas c JOIN psicologos p ON psicologos_id = p.id WHERE pacientes_id = $id"
+        // fazer select de consultas e psicologos, pra puxar o nome e crp
+        // talvez meter um group by, pra ficar uma única data
+        "SELECT c.data, c.hora, p.nome, p.crp FROM consultas c JOIN psicologos p ON c.psicologos_id = p.id
+         WHERE pacientes_id IS NULL ORDER BY c.data, c.hora"
     );
     $stmt->execute();
     $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <h3>Consultas Marcadas</h3>
     <table>
         <thead>
             <tr>
@@ -75,12 +62,34 @@ require "valida_login.php"
             <?php else: ?>
                 <tr>
                     <td colspan="4" style="padding: 10px; text-align: center;">
-                        Nenhuma consulta marcada no momento.
+                        Nenhuma consulta disponível no momento.
                     </td>
                 </tr>
             <?php endif; ?>
         </tbody>
     </table>
+    <!-- <section id="agendamento" class="agendamento-form">
+        <div class="container">
+            <h3>Agendar Consulta</h3>
+            <form>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+
+                <label for="data">Data</label>
+                <input type="date" id="data" required />
+
+                <label for="hora">Horário</label>
+                <input type="time" id="hora" required />
+
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </section> -->
+
+    <!-- Rodapé -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>

@@ -18,7 +18,7 @@ require "db.php";
 </head>
 
 <body>
-    <?php include "menu.php"?>
+    <?php include "menu.php" ?>
 
     <!-- Hero -->
     <section id="inicio" class="hero">
@@ -26,7 +26,7 @@ require "db.php";
             <div class="container">
                 <h2>Bem-vindo!!</h2>
                 <p>Cuidado psicológico com empatia, acolhimento e profissionalismo</p>
-                <a href="#agendamento" class="btn" id="agenda-con" title="deixe de ser lelé da cuca!">Agendar Consulta</a>
+                <a href="agenda_consulta.php" class="btn" id="agenda-con" title="deixe de ser lelé da cuca!">Agendar Consulta</a>
             </div>
         </div>
     </section>
@@ -57,7 +57,7 @@ require "db.php";
     <hr>
 
     <!-- Agendamento -->
-    <section id="agendamento" class="agendamento-form">
+    <!-- <section id="agendamento" class="agendamento-form">
         <div class="container">
             <h3>Agendar Consulta</h3>
             <form>
@@ -76,7 +76,7 @@ require "db.php";
                 <button type="submit">Confirmar Agendamento</button>
             </form>
         </div>
-    </section>
+    </section> -->
 
     <!-- Login -->
     <section id="login" class="login-form">

@@ -26,10 +26,10 @@ if ($linhas == 54) {
 
   if ($stmt == true) {
     echo "<script>alert('Perfil editado com sucesso!')</script>";
-    echo "<script>location.href = ('index.php')</script>";
+    echo "<script>location.href = ('exibe_pac.php?id=$id')</script>";
     exit();
   } else {
     echo "<script>alert ('Ocorreu um erro no servidor. Tente novamente.')</script>";
-    echo "<script>location.href('altera_pac.php?id=<?php echo $id;?>')</script>";
+    echo "<script>location.href('exibe_pac.php?id=$id')</script>";
   }
 }

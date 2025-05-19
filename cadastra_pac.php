@@ -8,7 +8,12 @@ session_start();
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/layout.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
 
     <!-- Validador de senha -->
     <script>
@@ -75,24 +80,30 @@ session_start();
 </head>
 
 <body>
-    <form method="post" action="processa_cadastra_pac.php">
-        <p>Nome: </p>
-        <p><input type="text" name="nome" required></p>
+    <?php include "menu.php"; ?>
+    <section id="agendamento" class="agendamento-form">
+        <div class="container">
+            <h3>Cadastro</h3>
+            <form method="post" action="processa_cadastra_pac.php">
+                <p>Nome</p>
+                <p><input type="text" name="nome" required></p>
 
-        <p>Telefone: </p>
-        <p><input type="text" name="telefone" required></p>
+                <p>Telefone</p>
+                <p><input type="text" name="telefone" required></p>
 
-        <p>E-mail: </p>
-        <p><input type="email" name="email" required></p>
+                <p>E-mail</p>
+                <p><input type="email" name="email" required></p>
 
-        <p>Senha: </p>
-        <p>
-            <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required>
-        </p>
+                <p>Senha</p>
+                <p>
+                    <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required>
+                </p>
 
-        <p><input type="submit" value="Cadastrar"></p>
-    </form>
+                <p><input type="submit" value="Cadastrar"></p>
+            </form>
+        </div>
+    </section>
 </body>
 
 </html>
