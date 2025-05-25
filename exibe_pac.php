@@ -70,6 +70,9 @@ require "valida_login.php"
                         <td style="padding: 8px; border-bottom: 1px solid #ddd;">
                             <?= htmlspecialchars($consulta['crp']) ?>
                         </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <a href="processa_desmarca_consulta.php?id=<?php echo $consulta['id_consulta']?>">Desmarcar</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

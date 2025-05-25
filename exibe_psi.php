@@ -40,7 +40,7 @@ require "valida_permissao.php";
     }
     ?>
     
-    <p><a href="cria_consulta.php">Adicionar consulta</a></p>
+    <p><a href="adiciona_consulta.php">Adicionar consulta</a></p>
     <?php
     // Query de horários marcados
     $stmt = $pdo->prepare(
@@ -118,6 +118,9 @@ require "valida_permissao.php";
                         </td>
                         <td style="padding: 8px; border-bottom: 1px solid #ddd;">
                             <?= substr($consulta['hora'], 0, 5) ?>
+                        </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <a href="processa_apaga_consulta.php?id=<?php echo $consulta['id_consulta']?>">Apagar horário</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

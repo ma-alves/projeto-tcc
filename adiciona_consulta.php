@@ -15,7 +15,7 @@ require "valida_permissao.php";
 </head>
 
 <body>
-    <form method="post" action="processa_cria_consulta.php">
+    <form method="post" action="processa_adiciona_consulta.php">
         <p>Data: </p>
         <p><input type="date" name="data" required></p>
 
@@ -25,7 +25,7 @@ require "valida_permissao.php";
         <p>Valor: </p>
         <p><input type="number" name="valor" value="90" required></p>
 
-        <p><input type="submit" value="Cadastrar"></p>
+        <p><input type="submit" value="Adicionar"></p>
     </form>
 </body>
 

@@ -1,14 +1,40 @@
 - https://psicologacautriasantos.com/
 
 A FAZER
-- Adicionar cancela consulta, deleta consulta
+- Adicionar link de cadastra psi
+- Editar consulta (?)
+- Pacotes de consulta
 - Trocar mensagem||fluxo ao clicar em agenda consulta
 - Colocar validador de telefone em cadastra e altera
-- Tirar formulário de agendamento da index, pq tem que estar logado para agendar
-    ou trocar, não pode ficar do jeito que está
+- Adicionar CRP no diagrama de classes
+- Esqueceu a senha?
 
 RECADOS
 ! Cadastro de ADM normal em cadastra_psi.php, alterar na apresentação
 
 OUTROS
 @Alt + Shift + F = formatador do PHP Intelephense
+
+CASO DE USO GERAL
+Adicionar em Administrador: adicionar consulta, apagar consulta, cadastrar psicólogo, editar perfil
+
+CASOS DE USO ESPECÍFICOS
+Criar os seguintes casos para Administrador:
+    Administrador - Adicionar consulta -> acessar página de adicionar consulta 
+                                    -> selecionar data, hora e valor
+                                    -> sistema confirma criação da consulta
+
+                - Apagar consulta -> acessar perfil
+                                    -> selecionar horário vago a ser apagado
+                                    -> sistema confirma que o horário vago foi apagada
+
+                - Cadastrar psicólogo -> acessar página de cadastro de psicólogo
+                                        -> sistema valida permissão para cadastrar
+                                        -> registrar nome, crp, e-mail e senha
+                                        -> sistema valida e confirma novo cadastro
+
+                - Editar perfil -> acessar página de alteração de perfil
+                                -> alterar informações
+                                -> sistema valida e salva as novas informações
+
+FAZER ESPECIFICAÇÕES DOS NOVOS CASOS DE USO ACIMA!!!!!!!!!!

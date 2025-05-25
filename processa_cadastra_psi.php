@@ -1,4 +1,6 @@
 <?php
+session_start();
+// require "valida_permissao.php";
 require "db.php";
 
 $nome = $_POST["nome"];
