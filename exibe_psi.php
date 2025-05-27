@@ -35,12 +35,13 @@ require "valida_permissao.php";
         echo "<p>Nome: $user[1]</p>";
         echo "<p>CRP: $user[2]</p>";
         echo "<p>Email: $user[3]</p>";
-        echo "<p><a href='altera_pac.php?id=$id'>Editar Perfil</a></p>";
+        echo "<p><a href='altera_psi.php?id=$id'>Editar Perfil</a></p>";
         echo "<p><a href='logout.php'>Sair</a></p>";
     }
     ?>
-    
-    <p><a href="adiciona_consulta.php">Adicionar consulta</a></p>
+    <p><a href='adiciona_consulta.php'>Adicionar consulta</a></p>
+    <p><a href='cadastra_psi.php'>Cadastrar psicólogo(a)</a></p>
+
     <?php
     // Query de horários marcados
     $stmt = $pdo->prepare(
@@ -79,6 +80,9 @@ require "valida_permissao.php";
                         </td>
                         <td style="padding: 8px; border-bottom: 1px solid #ddd;">
                             <?= htmlspecialchars($consulta['email']) ?>
+                        </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <a href="processa_psi_desmarca_consulta.php?id=<?php echo $consulta['id_consulta']?>">Desmarcar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -120,7 +124,7 @@ require "valida_permissao.php";
                             <?= substr($consulta['hora'], 0, 5) ?>
                         </td>
                         <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <a href="processa_apaga_consulta.php?id=<?php echo $consulta['id_consulta']?>">Apagar horário</a>
+                            <a href="processa_apaga_consulta.php?id=<?php echo $consulta['id_consulta'] ?>">Apagar horário</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

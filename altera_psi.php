@@ -4,17 +4,22 @@ require "db.php";
 require "valida_permissao.php";
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/layout.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cautria Santos</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <?php include "menu.php" ?>
     <?php
     $id = $_GET["id"];
 
@@ -46,6 +51,12 @@ require "valida_permissao.php";
             <a href="exibe_pac.php?id=<?php echo $id?>">Cancelar mudanças</a>
         </p>
     </form>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

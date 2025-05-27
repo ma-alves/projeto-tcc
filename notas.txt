@@ -1,11 +1,8 @@
 - https://psicologacautriasantos.com/
 
 A FAZER
-- Adicionar link de cadastra psi
-- Editar consulta (?)
 - Pacotes de consulta
-- Trocar mensagem||fluxo ao clicar em agenda consulta
-- Colocar validador de telefone em cadastra e altera
+- Pagamento
 - Adicionar CRP no diagrama de classes
 - Esqueceu a senha?
 

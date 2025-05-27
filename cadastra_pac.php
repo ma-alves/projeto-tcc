@@ -89,7 +89,7 @@ session_start();
                 <p><input type="text" name="nome" required></p>
 
                 <p>Telefone</p>
-                <p><input type="text" name="telefone" required></p>
+                <p><input type="text" name="telefone" maxlength="11" minlength="11"></p>
 
                 <p>E-mail</p>
                 <p><input type="email" name="email" required></p>
@@ -104,6 +104,12 @@ session_start();
             </form>
         </div>
     </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "valida_permissao.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -104,6 +105,11 @@ session_start();
             </form>
         </div>
     </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
