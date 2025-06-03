@@ -2,8 +2,9 @@
 
 A FAZER
 - Pacotes de consulta
-- Pagamento
-- Adicionar CRP no diagrama de classes
+- Pagamento, utilizar link zap do footer
+- Lembrete, link zap disponível para psicólogo
+- Mudar detalhes em login_psi que o alison falou
 - Esqueceu a senha?
 
 RECADOS

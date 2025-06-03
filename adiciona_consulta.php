@@ -15,7 +15,7 @@ require "valida_permissao.php";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
-    <title>Cautria Santos</title>
+    <title>Cautria Santos - Agendamento de Consultas Psicológicas</title>
 </head>
 
 <body>
@@ -37,11 +37,7 @@ require "valida_permissao.php";
             </form>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <?php include "footer.php" ?>
 </body>
 
 </html>

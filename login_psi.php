@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
-    <title>Cautria Santos</title>
+    <title>Cautria Santos - Área do Profissional</title>
 </head>
 
 <body>

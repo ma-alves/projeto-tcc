@@ -9,7 +9,7 @@ require "valida_permissao.php";
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cautria Santos</title>
+    <title>Cautria Santos - Agendamento de Consultas Psicológicas</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -82,7 +82,10 @@ require "valida_permissao.php";
                             <?= htmlspecialchars($consulta['email']) ?>
                         </td>
                         <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <a href="processa_psi_desmarca_consulta.php?id=<?php echo $consulta['id_consulta']?>">Desmarcar</a>
+                            <a href="https://api.whatsapp.com/send?phone=55<?php echo $consulta['telefone'] ?>&text=Ol%C3%A1%2C%20posso%20confirmar%20nossa%20consulta%3F">Confirmar</a>
+                        </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <a href="processa_psi_desmarca_consulta.php?id=<?php echo $consulta['id_consulta'] ?>">Desmarcar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -137,12 +140,7 @@ require "valida_permissao.php";
             <?php endif; ?>
         </tbody>
     </table>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Cautria Santos – Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <?php include "footer.php" ?>
 </body>
 
 </html>
