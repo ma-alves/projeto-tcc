@@ -88,7 +88,7 @@ session_start();
                 <p><input type="text" name="nome" required></p>
 
                 <p>Telefone</p>
-                <p><input type="text" name="telefone" maxlength="11" minlength="11"></p>
+                <p><input type="text" name="telefone" maxlength="11" minlength="11" title="A confirmação da consulta e o pagamento serão feitas através deste número."></p>
 
                 <p>E-mail</p>
                 <p><input type="email" name="email" required></p>

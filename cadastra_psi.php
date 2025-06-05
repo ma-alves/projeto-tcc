@@ -89,7 +89,7 @@ require "valida_permissao.php";
                 <p><input type="text" name="nome" required></p>
 
                 <p>CRP: </p>
-                <p><input type="text" name="crp" required></p>
+                <p><input type="text" name="crp" maxlength="8" minlength="7"></p>
 
                 <p>E-mail: </p>
                 <p><input type="email" name="email" required></p>

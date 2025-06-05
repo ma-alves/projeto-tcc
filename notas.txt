@@ -1,9 +1,7 @@
 - https://psicologacautriasantos.com/
 
 A FAZER
-- Pacotes de consulta
-- Pagamento, utilizar link zap do footer
-- Lembrete, link zap disponível para psicólogo
+- Pacotes de consulta, fazer esquema de consulta unida pela id_pacote
 - Mudar detalhes em login_psi que o alison falou
 - Esqueceu a senha?
 

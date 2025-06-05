@@ -123,7 +123,25 @@ require "valida_login.php";
                 <div class="dia">
                     <div class="data-header">
                         <?= date('d/m/Y', strtotime($data)) ?> -
-                        <?= date('l', strtotime($data)) ?>
+                        <?php
+                        // Array com os dias da semana em inglês e suas traduções
+                        $diasemana = array(
+                            'Sunday' => 'Domingo',
+                            'Monday' => 'Segunda-feira',
+                            'Tuesday' => 'Terça-feira',
+                            'Wednesday' => 'Quarta-feira',
+                            'Thursday' => 'Quinta-feira',
+                            'Friday' => 'Sexta-feira',
+                            'Saturday' => 'Sábado'
+                        );
+
+                        // Obter o dia em inglês
+                        $dia_ingles = date('l', strtotime($data));
+
+                        // Traduzir para português
+                        echo $diasemana[$dia_ingles];
+                        ?>
+                        <!-- <?= date('l', strtotime($data)) ?> -->
                     </div>
 
                     <?php if (empty($consultasDoDia)): ?>
