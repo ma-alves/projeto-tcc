@@ -108,33 +108,38 @@ require "db.php";
     </section>
 
     <!-- Login -->
-    <section id="login" class="login-form">
-        <div class="login-container">
-            <h3>Acesse sua Conta</h3>
-            <form action="processa_login_pac.php" method="POST">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu email" required />
+    <?php
+    if (!isset($_SESSION["id_pac"]) && !isset($_SESSION["id_psi"])) {
+    echo
+        '<section id="login" class="login-form">
+            <div class="login-container">
+                <h3>Acesse sua Conta</h3>
+                <form action="processa_login_pac.php" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
+                    </div>
+
+                    <button type="submit">Entrar</button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Ainda não tem uma conta? <a href="cadastra_pac.php" class="important-link">Cadastre-se aqui</a></p>
+                    <p><a href="recupera_senha.php">Esqueceu sua senha?</a></p>
+                    <p><a href="login_psi.php">Sou profissional</a></p>
                 </div>
-
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
-                </div>
-
-                <button type="submit">Entrar</button>
-            </form>
-
-            <div class="form-footer">
-                <p>Ainda não tem uma conta? <a href="cadastra_pac.php" class="important-link">Cadastre-se aqui</a></p>
-                <p><a href="recupera_senha.php">Esqueceu sua senha?</a></p>
-                <p><a href="login_psi.php">Sou profissional</a></p>
             </div>
-        </div>
-    </section>
+        </section>';
+    }
+    ?>
 
     <!-- Rodapé -->
-     <?php include "footer.php" ?>
+    <?php include "footer.php" ?>
 
 </body>
 

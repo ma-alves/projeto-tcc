@@ -1,13 +1,172 @@
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imagens/background-login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: url(../imagens/background-login.jpg);
-    background-size: cover;
-    background-position: center;
+    color: #333;
 }
-container {
-    width: 420px;
-    background-color: transparent;
+
+/* Container do Login */
+.login-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.login-title {
+    color: #5a5b3d;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.login-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #85865C, #d1d1a6);
+    border-radius: 2px;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid #c4c4a2;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #85865C;
+    box-shadow: 0 0 0 3px rgba(133, 134, 92, 0.2);
+    outline: none;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #85865C;
+    z-index: 2;
+}
+
+.with-icon input {
+    padding-left: 40px !important;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 40px;
+    border: 1px solid #c4c4a2;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-form input:focus {
+    border-color: #85865C;
+    box-shadow: 0 0 0 3px rgba(133, 134, 92, 0.2);
+    outline: none;
+}
+
+/* Botão */
+.btn-login {
+    width: 100%;
+    background: linear-gradient(135deg, #85865C, #a3a475);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(133, 134, 92, 0.3);
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #6a6b4a, #85865C);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(133, 134, 92, 0.4);
+}
+
+/* Rodapé */
+.login-footer {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.login-footer a {
+    color: #85865C;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+.login-footer a:hover {
+    color: #6a6b4a;
+    text-decoration: underline;
+    background-color: rgba(133, 134, 92, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 2.5rem 1.5rem;
+        border-radius: 10px;
+    }
+
+    .login-title {
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-control {
+        padding: 0.8rem 1rem 0.8rem 45px;
+    }
 }

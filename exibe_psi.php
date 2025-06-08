@@ -39,13 +39,13 @@ require "valida_permissao.php";
         echo "<p><a href='logout.php'>Sair</a></p>";
     }
     ?>
-    <p><a href='adiciona_consulta.php'>Adicionar consulta</a></p>
-    <p><a href='cadastra_psi.php'>Cadastrar psicólogo(a)</a></p>
+    <p><a href='adiciona_consulta.php'>Adicionar consulta ou pacote</a></p>
+    <p><a href='cadastra_psi.php'>Cadastrar psicóloga(o)</a></p>
 
     <?php
     // Query de horários marcados
     $stmt = $pdo->prepare(
-        "SELECT * FROM consultas c JOIN pacientes p ON pacientes_id = p.id WHERE psicologos_id = $id"
+        "SELECT * FROM consultas c JOIN pacientes p ON pacientes_id = p.id WHERE psicologos_id = $id ORDER BY c.data"
     );
     $stmt->execute();
     $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);

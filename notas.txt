@@ -1,8 +1,9 @@
 - https://psicologacautriasantos.com/
 
 A FAZER
-- Pacotes de consulta, fazer esquema de consulta unida pela id_pacote
-- Mudar detalhes em login_psi que o alison falou
+- ALTERAR A DESGRACA DO DIAGRAMA DE CLASSE DE NOVO
+- Pacote Trimestral
+- Trocar de senha psi
 - Esqueceu a senha?
 
 RECADOS
@@ -12,25 +13,15 @@ OUTROS
 @Alt + Shift + F = formatador do PHP Intelephense
 
 CASO DE USO GERAL
-Adicionar em Administrador: adicionar consulta, apagar consulta, cadastrar psicólogo, editar perfil
+Adicionar em Administrador: adicionar pacote
+Adicionar em Usuário: contratar pacote
 
 CASOS DE USO ESPECÍFICOS
-Criar os seguintes casos para Administrador:
-    Administrador - Adicionar consulta -> acessar página de adicionar consulta 
-                                    -> selecionar data, hora e valor
-                                    -> sistema confirma criação da consulta
-
-                - Apagar consulta -> acessar perfil
-                                    -> selecionar horário vago a ser apagado
-                                    -> sistema confirma que o horário vago foi apagada
-
-                - Cadastrar psicólogo -> acessar página de cadastro de psicólogo
-                                        -> sistema valida permissão para cadastrar
-                                        -> registrar nome, crp, e-mail e senha
-                                        -> sistema valida e confirma novo cadastro
-
-                - Editar perfil -> acessar página de alteração de perfil
-                                -> alterar informações
-                                -> sistema valida e salva as novas informações
-
+    Administrador - Adicionar pacote -> acessar página de adicionar consulta ou pacote
+                                    -> selecionar datas, hora e valor
+                                    -> sistema confirma criação do pacote
+    Usuário - Contratar pacote -> acessar página de agendar consultas
+                               -> selecionar pacote
+                               -> sistema confirma contratação do pacote
+    
 FAZER ESPECIFICAÇÕES DOS NOVOS CASOS DE USO ACIMA!!!!!!!!!!

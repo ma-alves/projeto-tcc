@@ -19,7 +19,8 @@ require "valida_login.php"
 </head>
 
 <body>
-    <?php include "menu.php";
+    <?php
+    include "menu.php";
 
     $id = $_GET["id"];
 
@@ -39,7 +40,7 @@ require "valida_login.php"
     }
 
     $stmt = $pdo->prepare(
-        "SELECT * FROM consultas c JOIN psicologos p ON psicologos_id = p.id WHERE pacientes_id = $id"
+        "SELECT * FROM consultas c JOIN psicologos p ON psicologos_id = p.id WHERE pacientes_id = $id ORDER BY c.data"
     );
     $stmt->execute();
     $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);

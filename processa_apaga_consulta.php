@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "db.php";
+require "valida_permissao.php";
 
 $id = $_GET["id"];
 $id_psi = $_SESSION["id_psi"];

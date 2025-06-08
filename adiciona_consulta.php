@@ -37,6 +37,24 @@ require "valida_permissao.php";
             </form>
         </div>
     </section>
+    <hr>
+    <section id="agendamento" class="agendamento-form">
+        <div class="container">
+            <h3>Adicionar Pacote Mensal</h3>
+            <form method="post" action="processa_adiciona_pacote_mensal.php">
+                <p>Data: </p>
+                <p><input type="date" name="data1" required></p>
+                <p><input type="date" name="data2" required></p>
+                <p><input type="date" name="data3" required></p>
+                <p><input type="date" name="data4" required></p>
+                <p>Hora: </p>
+                <p><input type="time" name="hora" required></p>
+                <p>Valor: </p>
+                <p><input type="number" name="valor" value="320" required></p>
+                <p><input type="submit" value="Adicionar"></p>
+            </form>
+        </div>
+    </section>
     <?php include "footer.php" ?>
 </body>
 

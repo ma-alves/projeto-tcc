@@ -13,6 +13,6 @@ if ($user && password_verify($senha, $user['senha'])) {
   $_SESSION['admin'] = false;
   echo "<script>location.href = ('exibe_pac.php?id=$id')</script>";
 } else {
-  echo "<script>alert ('E-mail ou senha incorretos. Tente novamente.')</script>";
+  echo "<script>alert('E-mail ou senha incorretos. Tente novamente.')</script>";
   echo "<script>location.href = ('index.php#login')</script>";
 }

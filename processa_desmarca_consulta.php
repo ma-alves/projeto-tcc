@@ -6,7 +6,7 @@ $id_pac = $_SESSION["id_pac"];
 $id_consulta = $_GET["id"];
 
 $stmt = $pdo->prepare(
-    "UPDATE consultas SET pacientes_id = ? WHERE id_consulta = ?"
+    "UPDATE consultas SET pacientes_id = ?, id_pacote = NULL WHERE id_consulta = ?"
 );
 $stmt->execute([null, $id_consulta]);
 

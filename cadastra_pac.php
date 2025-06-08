@@ -8,7 +8,8 @@ session_start();
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cautria Santos - Agendamento de Consultas Psicológicas</title>
+    <title>Cautria Santos - Cadastro de Paciente</title>
+    <link rel="stylesheet" href="./assets/styles/style-cadastra-pac.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -82,24 +83,45 @@ session_start();
     <?php include "menu.php"; ?>
     <section id="agendamento" class="agendamento-form">
         <div class="container">
-            <h3>Cadastro</h3>
+            <h3>Crie sua Conta</h3>
             <form method="post" action="processa_cadastra_pac.php">
-                <p>Nome</p>
-                <p><input type="text" name="nome" required></p>
 
-                <p>Telefone</p>
-                <p><input type="text" name="telefone" maxlength="11" minlength="11" title="A confirmação da consulta e o pagamento serão feitas através deste número."></p>
+                <div class="form-group with-icon">
+                    <label for="nome">Nome Completo</label>
+                    <div class="input-container">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" class="form-control" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                    </div>
+                </div>
 
-                <p>E-mail</p>
-                <p><input type="email" name="email" required></p>
+                <div class="form-group with-icon">
+                    <label for="telefone">Telefone</label>
+                    <div class="input-container">
+                        <i class="fas fa-mobile-alt input-icon"></i>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" maxlength="11" minlength="11"
+                            title="A confirmação da consulta e o pagamento serão feitas através deste número." placeholder="(00) 00000-0000">
+                    </div>
+                </div>
 
-                <p>Senha</p>
-                <p>
-                    <input type="password" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required>
-                </p>
+                <div class="form-group with-icon">
+                    <label for="email">E-mail</label>
+                    <div class="input-container">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                </div>
 
-                <p><input type="submit" value="Cadastrar"></p>
+                <div class="form-group with-icon">
+                    <label for="senha">Senha</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" class="form-control" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required
+                            placeholder="Digite uma senha segura">
+                    </div>
+                </div>
+
+                <input type="submit" class="btn-submit" value="Cadastrar">
             </form>
         </div>
     </section>
