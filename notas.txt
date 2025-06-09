@@ -1,8 +1,7 @@
 - https://psicologacautriasantos.com/
 
 A FAZER
-- ALTERAR A DESGRACA DO DIAGRAMA DE CLASSE DE NOVO
-- Pacote Trimestral
+- Altera consulta
 - Trocar de senha psi
 - Esqueceu a senha?
 

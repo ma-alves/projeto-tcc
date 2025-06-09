@@ -25,7 +25,7 @@ require "valida_login.php";
     <?php
     $stmt = $pdo->prepare(
         "SELECT c.id_consulta, c.data, c.hora, p.nome, p.crp FROM consultas c JOIN psicologos p ON c.psicologos_id = p.id
-         WHERE pacientes_id IS NULL AND id_pacote IS NULL ORDER BY c.data, c.hora"
+         WHERE pacientes_id IS NULL AND id_pacote IS NULL AND id_pacotetri IS NULL ORDER BY c.data, c.hora"
     );
     $stmt->execute();
     $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -220,6 +220,71 @@ require "valida_login.php";
                                 <form action="processa_agenda_pacote.php" method="post">
                                     <input type="hidden" name="id_pac" value="<?php echo $_SESSION["id_pac"] ?>">
                                     <input type="hidden" name="id_pacote" value="<?php echo $consulta["id_pacote"] ?>">
+                                    <button type="submit" class="btn-agendar">Agendar</button>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                    </tr>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4" style="padding: 10px; text-align: center;">
+                            Nenhum pacote disponível no momento.
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <?php
+        $stmt = $pdo->prepare(
+            "SELECT c.id_consulta, c.data, c.hora, c.id_pacotetri, p.nome, p.crp FROM consultas c JOIN psicologos p ON c.psicologos_id = p.id
+         WHERE pacientes_id IS NULL AND id_pacotetri IS NOT NULL ORDER BY c.data, c.hora"
+        );
+        $stmt->execute();
+        $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $consultasPorData = [];
+        foreach ($consultas as $consulta) {
+            $data = $consulta['data'];
+            if (!isset($consultasPorData[$data])) {
+                $consultasPorData[$data] = [];
+            }
+            $consultasPorData[$data][] = $consulta;
+        }
+        ?>
+        <h3>Pacotes Trimestrais</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th style="padding: 10px; text-align: left;">Psicólogo(a)</th>
+                    <th style="padding: 10px; text-align: left;">CRP</th>
+                    <th style="padding: 10px; text-align: left;">Hora</th>
+                    <th style="padding: 10px; text-align: left;">Datas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (count($consultas) > 0): ?>
+                    <tr>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <?= htmlspecialchars($consulta['nome']) ?>
+                        </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <?= htmlspecialchars($consulta['crp']) ?>
+                        </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <?= substr($consulta['hora'], 0, 5) ?>
+                        </td>
+                        <?php foreach ($consultas as $consulta): ?>
+                            <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                                <?= date('d/m/Y', strtotime($consulta['data'])) ?>
+                            </td>
+                        <?php endforeach; ?>
+                        <?php if (!isset($_SESSION["id_psi"])): ?>
+                            <td>
+                                <form action="processa_agenda_pacote.php" method="post">
+                                    <input type="hidden" name="id_pac" value="<?php echo $_SESSION["id_pac"] ?>">
+                                    <input type="hidden" name="id_pacotetri" value="<?php echo $consulta["id_pacotetri"] ?>">
                                     <button type="submit" class="btn-agendar">Agendar</button>
                                 </form>
                             </td>

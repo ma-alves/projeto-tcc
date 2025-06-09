@@ -64,7 +64,7 @@ require "db.php";
                 <div class="pacote">
                     <h4>Consulta Avulsa</h4>
                     <p>Sessão única para avaliação inicial ou orientação pontual, com duração de 50 minutos.</p>
-                    <span class="preco">R$ ?</span>
+                    <span class="preco">R$90,00</span>
                     <a href="agenda_consulta.php" class="btn-pacote">Agendar</a>
                 </div>
 
@@ -72,13 +72,13 @@ require "db.php";
                     <div class="destaque">Mais Popular</div>
                     <h4>Pacote Mensal</h4>
                     <p>4 sessões com 10% de desconto, acompanhamento contínuo para desenvolvimento pessoal.</p>
-                    <span class="preco">R$ ?</span>
+                    <span class="preco">R$320,00</span>
                     <a href="agenda_consulta.php" class="btn-pacote">Contratar</a>
                 </div>
 
                 <div class="pacote">
                     <h4>Pacote Trimestral</h4>
-                    <p>12 sessões com 15% de desconto, ideal para psicoterapia breve com objetivos definidos.</p>
+                    <p>8 sessões com 15% de desconto, ideal para psicoterapia breve com objetivos definidos.</p>
                     <span class="preco">R$ ?</span>
                     <a href="agenda_consulta.php" class="btn-pacote">Contratar</a>
                 </div>
