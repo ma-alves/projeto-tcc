@@ -12,13 +12,17 @@ OUTROS
 @Alt + Shift + F = formatador do PHP Intelephense
 
 CASO DE USO GERAL
-Adicionar em Administrador: adicionar pacote
-Adicionar em Usuário: contratar pacote
+Adicionar em Administrador:
+- adicionar pacote
+- confirmar consulta 
+                           
+Adicionar em Usuário:
+- contratar pacote
 
 CASOS DE USO ESPECÍFICOS
-    Administrador - Adicionar pacote -> acessar página de adicionar consulta ou pacote
-                                    -> selecionar datas, hora e valor
+    Administrador - Adicionar pacote -> acessar página de adicionar consulta                   -> selecionar datas, hora e valor
                                     -> sistema confirma criação do pacote
+                  - Confirmar consulta -> acessar perfil, visualizar consultas marcadas e confirmar com paciente
     Usuário - Contratar pacote -> acessar página de agendar consultas
                                -> selecionar pacote
                                -> sistema confirma contratação do pacote
