@@ -282,7 +282,7 @@ require "valida_login.php";
                         <?php endforeach; ?>
                         <?php if (!isset($_SESSION["id_psi"])): ?>
                             <td>
-                                <form action="processa_agenda_pacote.php" method="post">
+                                <form action="processa_agenda_pacotetri.php" method="post">
                                     <input type="hidden" name="id_pac" value="<?php echo $_SESSION["id_pac"] ?>">
                                     <input type="hidden" name="id_pacotetri" value="<?php echo $consulta["id_pacotetri"] ?>">
                                     <button type="submit" class="btn-agendar">Agendar</button>

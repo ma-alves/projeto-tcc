@@ -79,7 +79,7 @@ require "db.php";
                 <div class="pacote">
                     <h4>Pacote Trimestral</h4>
                     <p>8 sessões com 15% de desconto, ideal para psicoterapia breve com objetivos definidos.</p>
-                    <span class="preco">R$ ?</span>
+                    <span class="preco">R$910,00</span>
                     <a href="agenda_consulta.php" class="btn-pacote">Contratar</a>
                 </div>
             </div>

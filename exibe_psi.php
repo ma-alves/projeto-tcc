@@ -85,6 +85,9 @@ require "valida_permissao.php";
                             <a href="https://api.whatsapp.com/send?phone=55<?php echo $consulta['telefone'] ?>&text=Ol%C3%A1%2C%20podemos%20confirmar%20nossa%20consulta%20do%20dia%20<?php echo $consulta['data']?>%20%C3%A0s%20<?php echo $consulta['hora']?>%20horas%20e%20fechar%20o%20pagamento%3F">Confirmar</a>
                         </td>
                         <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+                            <a href="altera_consulta.php?id=<?php echo $consulta['id_consulta'] ?>">Editar</a>
+                        </td>
+                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
                             <a href="processa_psi_desmarca_consulta.php?id=<?php echo $consulta['id_consulta'] ?>">Desmarcar</a>
                         </td>
                     </tr>
