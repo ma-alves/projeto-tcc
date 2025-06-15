@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cautria Santos - Cadastro de Paciente</title>
-    <link rel="stylesheet" href="./assets/styles/style-cadastra-pac.css">
+    <link rel="stylesheet" href="./assets/styles/style-cadastra-user.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -77,12 +77,39 @@ session_start();
             }
         }
     </script>
+
+    <script>
+        function validarConfirmacaoSenha() {
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmar_senha').value;
+            const errorElement = document.getElementById('senhaError');
+
+            if (senha && confirmarSenha && senha !== confirmarSenha) {
+                errorElement.style.display = 'block';
+                document.getElementById('confirmar_senha').setCustomValidity("As senhas não coincidem");
+            } else {
+                errorElement.style.display = 'none';
+                document.getElementById('confirmar_senha').setCustomValidity("");
+            }
+        }
+
+        // Adicionando validação ao enviar o formulário
+        document.querySelector('form').addEventListener('submit', function(e) {
+            validarConfirmacaoSenha();
+            if (document.getElementById('confirmar_senha').validity.customError) {
+                e.preventDefault();
+            }
+        });
+    </script>
 </head>
 
 <body>
     <?php include "menu.php"; ?>
     <section id="agendamento" class="agendamento-form">
         <div class="container">
+            <a href="javascript:history.back()" class="btn-voltar">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
             <h3>Crie sua Conta</h3>
             <form method="post" action="processa_cadastra_pac.php">
 
@@ -119,6 +146,15 @@ session_start();
                             title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres." required
                             placeholder="Digite uma senha segura">
                     </div>
+                </div>
+                <div class="form-group with-icon">
+                    <label for="confirmar_senha">Confirmar Senha</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" class="form-control" id="confirmar_senha" name="confirmar_senha" required
+                            placeholder="Digite a senha novamente" oninput="validarConfirmacaoSenha()">
+                    </div>
+                    <small id="senhaError" class="text-danger" style="display:none;">As senhas não coincidem!</small>
                 </div>
 
                 <input type="submit" class="btn-submit" value="Cadastrar">

@@ -11,6 +11,7 @@ require "valida_login.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cautria Santos - Agendamento de Consultas Psicológicas</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/style-exibe-perfil.css">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,63 +29,87 @@ require "valida_login.php"
         $stmt = $pdo->prepare('SELECT * FROM pacientes WHERE id = ?');
         $stmt->execute([$id]);
         $user = $stmt->fetch();
+    ?>
+        <div class="profile-container">
+            <!-- Seção de Informações de Perfil -->
+            <div class="profile-info">
+                <div class="profile-header">
+                    <img src="./assets/imagens/profile-pictures/profile-paciente.jpeg" alt="Avatar" class="profile-avatar">
+                    <h2 class="profile-name"><?= htmlspecialchars($user[1]) ?></h2>
+                </div>
 
-        echo "<p>Nome: $user[1]</p>";
-        echo "<p>Telefone: $user[2]</p>";
-        echo "<p>Email: $user[3]</p>";
-        echo "<p><a href='altera_pac.php?id=$id'>Editar Perfil</a></p>";
-        echo "<p><a href='logout.php'>Sair</a></p>";
-    } else {
+                <div class="profile-details">
+                    <div class="profile-detail">
+                        <i class="fas fa-mobile-alt input-icon"></i>
+                        <span><?= htmlspecialchars($user[2]) ?></span>
+                    </div>
+                    <div class="profile-detail">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <span><?= htmlspecialchars($user[3]) ?></span>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <a href='altera_pac.php?id=<?= $id ?>' class="profile-btn btn-edit">
+                        <i class="fas fa-edit"></i> Editar Perfil
+                    </a>
+                    <a href='agenda_consulta.php' class="profile-btn btn-add">
+                        <i class="fas fa-plus"></i> Agendar Consulta ou Pacote
+                    </a>
+                    <a href='logout.php' class="profile-btn btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </a>
+                </div>
+            </div>
+
+            <!-- Seção de Consultas -->
+            <div class="consultas-section">
+                <h3 class="section-title">Consultas Marcadas</h3>
+
+                <?php
+                $stmt = $pdo->prepare(
+                    "SELECT * FROM consultas c JOIN psicologos p ON psicologos_id = p.id WHERE pacientes_id = $id ORDER BY c.data"
+                );
+                $stmt->execute();
+                $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if (count($consultas) > 0): ?>
+                    <table class="consultas-table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Psicólogo</th>
+                                <th>CRP</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($consultas as $consulta): ?>
+                                <tr>
+                                    <td><?= date('d/m/Y', strtotime($consulta['data'])) ?></td>
+                                    <td><?= substr($consulta['hora'], 0, 5) ?></td>
+                                    <td><?= htmlspecialchars($consulta['nome']) ?> </td>
+                                    <td><?= htmlspecialchars($consulta['crp']) ?></td>
+                                    <td>
+                                        <a href="processa_desmarca_consulta.php?id=<?php echo $consulta['id_consulta'] ?>"
+                                            class="action-btn btn-delete">
+                                            <i class="fas fa-trash-alt"></i> Desmarcar
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
+                    <p class="no-consultas">Nenhuma consulta marcada no momento.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    <?php } else {
         echo "<script>alert('Acesso restrito.')</script>";
         echo "<script>location.href = ('index.php')</script>";
     }
-
-    $stmt = $pdo->prepare(
-        "SELECT * FROM consultas c JOIN psicologos p ON psicologos_id = p.id WHERE pacientes_id = $id ORDER BY c.data"
-    );
-    $stmt->execute();
-    $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <h3>Consultas Marcadas</h3>
-    <table>
-        <thead>
-            <tr>
-                <th style="padding: 10px; text-align: left;">Data</th>
-                <th style="padding: 10px; text-align: left;">Hora</th>
-                <th style="padding: 10px; text-align: left;">Psicólogo(a)</th>
-                <th style="padding: 10px; text-align: left;">CRP</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (count($consultas) > 0): ?>
-                <?php foreach ($consultas as $consulta): ?>
-                    <tr>
-                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <?= date('d/m/Y', strtotime($consulta['data'])) ?>
-                        </td>
-                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <?= substr($consulta['hora'], 0, 5) ?>
-                        </td>
-                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <?= htmlspecialchars($consulta['nome']) ?>
-                        </td>
-                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <?= htmlspecialchars($consulta['crp']) ?>
-                        </td>
-                        <td style="padding: 8px; border-bottom: 1px solid #ddd;">
-                            <a href="processa_desmarca_consulta.php?id=<?php echo $consulta['id_consulta'] ?>">Desmarcar</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="4" style="padding: 10px; text-align: center;">
-                        Nenhuma consulta marcada no momento.
-                    </td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
     <?php include "footer.php" ?>
 </body>
 

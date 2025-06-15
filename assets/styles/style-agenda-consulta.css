@@ -1,0 +1,201 @@
+:root {
+    --primary: #85865C;
+    --secondary: #d1d1a6;
+    --dark: #101104;
+    --light: #ffffeb;
+    --accent: #72744e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baskervville", serif;
+}
+
+body {
+    background-color: rgb(235, 235, 201);
+    color: #333;
+    line-height: 1.6;
+    padding-top: 120px;
+}
+
+/* Seção de Agendamento */
+.agendamento-section {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.agendamento-title {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    position: relative;
+    font-weight: 600;
+}
+
+.agendamento-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary);
+}
+
+/* Calendário */
+.pacotes-title {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.dia {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--secondary);
+}
+
+.dia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.data-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.consulta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.consulta-item:last-child {
+    border-bottom: none;
+}
+
+.consulta-info {
+    flex: 1;
+}
+
+.hora {
+    font-weight: bold;
+    color: #333;
+}
+
+.psicologo {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Botões */
+.btn-agendar {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-agendar:hover {
+    background-color: #6a6b4a;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabelas de Pacotes */
+.pacotes-container {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+.pacotes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.pacotes-table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.pacotes-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.pacotes-table tr:hover {
+    background-color: #f9f9f7;
+}
+
+.sem-consultas {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+.btn-voltar {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    color: #6a6b4a;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+
+    .agendamento-section {
+        padding: 3rem 1rem;
+    }
+
+    .pacotes-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

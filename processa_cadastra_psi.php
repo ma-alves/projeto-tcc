@@ -1,6 +1,6 @@
 <?php
 session_start();
-// require "valida_permissao.php";
+require "valida_permissao.php";
 require "db.php";
 
 $nome = $_POST["nome"];
@@ -14,7 +14,7 @@ $linhas = $stmt->rowCount();
 
 if ($linhas == 1) {
   echo "<script>alert ('E-mail já cadastrado. Por favor, utilize um e-mail diferente.')</script>";
-  echo "<script>location.href = ('cadastra_pac.php')</script>";
+  echo "<script>location.href = ('cadastra_psi.php')</script>";
 } else {
   $stmt = $pdo->prepare("INSERT INTO psicologos (nome, crp, email, senha, admin)
                         VALUES (?, ?, ?, ?, ?)");

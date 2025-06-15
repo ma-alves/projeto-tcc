@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <a href="index.php#inicio"><img src="./assets/imagens/Logo_semfundo.png-branca2.png" alt="Logo PsyAgenda"></a>
+            <a href="index.php#inicio"><img src="./assets/imagens/Logo_semfundo.png-branca2.png" alt="Logo Cautria Santos"></a>
         </div>
         <div class="menu">
             <ul>

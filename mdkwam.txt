@@ -1,0 +1,50 @@
+- UC010
+- Adicionar pacote
+- O administrador seleciona as datas, horários e valor, e adiciona o pacote
+- Administrador
+- Alta
+- Não possui
+- O administrador precisa estar logado no sistema
+- O pacote é disponibilizado para contratação na página de agendamentos
+
+    1 - O administrador acessa a página de adicionar pacote
+        - O administrador acessa o seu perfil e clicla no botão de adicionar consulta/pacote
+    2 - O administrador seleciona os dados
+        - O administrador seleciona as datas, horários e valores do pacote
+        - Clica em adicionar
+    3 - O sistema valida os dados e exibe mensagem de sucesso
+        - Todos os campos obrigatórios estão preenchidos.
+            - Todos os campos de formato específico estão com a formatação correta.
+            - Após a validação bem-sucedida, o sistema registra as informações e exibe uma mensagem de confirmação
+
+    1 - O administrador cancela a adição.
+        - O administrador decide não adicionar o pacote e clica no botão “Cancelar”.
+        - O sistema retorna ao perfil do administrador sem aplicar as mudanças.
+    2 - Erro na validação dos dados.
+        - Se houver erros na validação (ex. dados preenchidos de forma incorreta), 
+        o sistema exibe mensagens de erro específicas ao lado dos campos afetados.
+        - O usuário corrige as informações e tenta novamente salvar as alterações.
+
+    1 - Erro ao salvar o pacote. O sistema retorna ao perfil do administrador sem aplicar as mudanças.
+        - Condição: O sistema encontra um erro ao tentar adicionar o pacote (ex. falha de conexão ou no servidor).
+
+- UC011
+- Contratar pacote
+- O usuário seleciona o pacote que quer contratar
+- Usuário
+- Alta
+- Não possui
+- O usuário precisa estar logado no sistema
+- O usuário contrata o pacote
+
+    1 - O usuário acessa a página de agendamento de consultas e pacotes
+        - O usuário seleciona o pacote a ser contratado
+    2 - O sistema valida a contratação
+        - O sistema exibe uma mensagem de contratação feita com sucesso
+    
+    1 - O usuário cancela a contratação do pacote
+        - O usuário vai até sua página de perfil e cancela as consultas
+
+    1 - Erro na validação dos dados
+        - Se houver erros na validação (ex. dados preenchidos de forma incorreta), 
+        o sistema exibe mensagens de erro

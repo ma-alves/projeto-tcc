@@ -1,0 +1,238 @@
+body {
+    padding-top: 120px;
+    background-color: #d1d1a6;
+}
+
+.profile-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+/* Seção de Informações do Perfil */
+.profile-info {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #d1d1a6;
+    margin-bottom: 1rem;
+}
+
+.profile-name {
+    color: #5a5b3d;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.profile-details {
+    margin-bottom: 2rem;
+}
+
+.profile-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.profile-detail i {
+    color: #85865C;
+    width: 25px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.profile-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #85865C;
+    border: 2px solid #85865C;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #d1d1a6;
+    color: #33351b;
+    border: 2px solid #85865C;
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    border: 2px solid #85865C;
+    color: #85865C;
+}
+
+.btn-logout:hover {
+    background-color: #85865C;
+    color: #d1d1a6;
+    border: 2px solid #d1d1a6;
+    transform: translateY(-2px);
+}
+
+.btn-add {
+    background-color: #5a5b3d;
+    border: 2px solid #5a5b3d;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.btn-add:hover {
+    background-color: #85865C;
+    transform: translateY(-2px);
+}
+
+/* Seção de Consultas */
+.consultas-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    color: #5a5b3d;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #d1d1a6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.consultas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.consultas-table th {
+    background-color: #85865C;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.consultas-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0d0;
+    vertical-align: middle;
+}
+
+.consultas-table tr:hover {
+    background-color: #f9f9f7;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.btn-confirm {
+    background-color: #5cb85c;
+    color: white;
+    border: 1px solid #4cae4c;
+    font-weight: 600;
+}
+
+.btn-confirm:hover {
+    background-color: white;
+    color: #4cae4c;
+    transform: translateY(-1px);
+    border: 1px solid #4cae4c;
+    font-weight: 600;
+}
+
+.btn-cancel {
+    background-color: #d9534f;
+    color: white;
+    border: 1px solid #d43f3a;
+    font-weight: 600;
+}
+
+.btn-cancel:hover {
+    background-color: white;
+    color: #d43f3a;
+    transform: translateY(-1px);
+    border: 1px solid #d43f3a;
+    font-weight: 600;
+}
+
+.btn-delete {
+    background-color: #f0ad4e;
+    color: white;
+    border: 1px solid #eea236;
+    font-weight: 400;
+}
+
+.btn-delete:hover {
+    background-color: white;
+    color: #eea236;
+    transform: translateY(-1px);
+    border: 1px solid #eea236;
+    font-weight: 600;
+}
+
+.no-consultas {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .profile-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    body {
+        padding-top: 80px;
+    }
+    
+    .consultas-table {
+        display: block;
+        overflow-x: auto;
+    }
+}

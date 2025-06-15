@@ -17,6 +17,9 @@
 
 <body>
     <div class="login-container">
+        <a href="javascript:history.back()" class="btn-voltar">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </a>
         <h2 class="login-title">Área do Profissional</h2>
         <form action="processa_login_psi.php" method="POST">
             <div class="form-group with-icon">
