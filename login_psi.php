@@ -38,9 +38,9 @@
             </div>
             <button type="submit" class="btn-login">Acessar Plataforma</button>
 
-            <div class="login-footer">
+            <!-- <div class="login-footer">
                 <a href="recuperar_senha.php"><i class="fas fa-key"></i> Recuperar Senha</a>
-            </div>
+            </div> -->
         </form>
     </div>
 </body>

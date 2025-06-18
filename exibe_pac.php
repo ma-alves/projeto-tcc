@@ -34,7 +34,7 @@ require "valida_login.php"
             <!-- Seção de Informações de Perfil -->
             <div class="profile-info">
                 <div class="profile-header">
-                    <img src="./assets/imagens/profile-pictures/profile-paciente.jpeg" alt="Avatar" class="profile-avatar">
+                    <img src="./assets/imagens/profile-pictures/paciente.jpg" alt="Avatar" class="profile-avatar">
                     <h2 class="profile-name"><?= htmlspecialchars($user[1]) ?></h2>
                 </div>
 

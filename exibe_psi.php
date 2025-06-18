@@ -38,7 +38,7 @@ require "valida_permissao.php";
             <!-- Seção de Informações do Perfil -->
             <div class="profile-info">
                 <div class="profile-header">
-                    <img src="./assets/imagens/profile-pictures/profile-totoro.jpeg" alt="Avatar" class="profile-avatar">
+                    <img src="./assets/imagens/profile-pictures/psi.png" alt="Avatar" class="profile-avatar">
                     <h2 class="profile-name"><?= htmlspecialchars($user[1]) ?></h2>
                 </div>
 
