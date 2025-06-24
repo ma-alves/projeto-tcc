@@ -68,7 +68,7 @@ require "valida_permissao.php";
                     <label for="senha">Senha</label>
                     <div class="input-container">
                         <i class="fas fa-lock input-icon"></i>
-                        <input type="password" class="form-control" id="senha" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        <input type="password" class="form-control" id="senha" name="senha" value="<?php echo $_SESSION['placeholder']; ?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             title="A senha deve conter pelo menos um número, uma letra maiúscula, uma letra mínuscula e no mínimo 8 caracteres."
                             placeholder="Digite uma senha segura" required>
                     </div>

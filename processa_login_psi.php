@@ -11,6 +11,7 @@ $user = $stmt->fetch();
 if ($user && password_verify($senha, $user['senha'])) {
   $_SESSION['id_psi'] = $id = $user['id'];
   $_SESSION['admin'] = true;
+  $_SESSION['placeholder'] = $senha;
   echo "<script>location.href = ('exibe_psi.php?id=$id')</script>";
 } else {
   echo "<script>alert ('E-mail ou senha incorretos. Tente novamente.')</script>";
