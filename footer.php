@@ -39,6 +39,7 @@
                 <a href="https://www.instagram.com/psicautriasantos/"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/PsiCautriasantos/"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.linkedin.com/in/cautria-santos-4a4365202/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.threads.com/@psicautriasantos?xmt=AQF08I11tLo30j4Q2Gu_Z4P7XNZS6KshMiRdf4ssWctJDro"><i class="fab fa-threads"></i></a>
             </div>
         </div>
     </div>

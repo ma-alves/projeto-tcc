@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "valida_permissao.php";
+// require "valida_permissao.php";
 ?>
 <!DOCTYPE html>
 <html>

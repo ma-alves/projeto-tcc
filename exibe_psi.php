@@ -145,10 +145,16 @@ require "valida_permissao.php";
                                     <td><?= date('d/m/Y', strtotime($consulta['data'])) ?></td>
                                     <td><?= substr($consulta['hora'], 0, 5) ?></td>
                                     <td>
-                                        <a href="processa_apaga_consulta.php?id=<?php echo $consulta['id_consulta'] ?>"
-                                            class="action-btn btn-delete">
-                                            <i class="fas fa-trash-alt"></i> Apagar horário
-                                        </a>
+                                        <div class="action-buttons">
+                                            <a href="processa_apaga_consulta.php?id=<?php echo $consulta['id_consulta'] ?>"
+                                                id="action-btn" class="btn-apagar">
+                                                <i class="fas fa-trash-alt"></i> Apagar horário
+                                            </a>
+                                            <a href="altera_consulta.php?id=<?php echo $consulta['id_consulta'] ?>"
+                                                id="action-btn" class="btn-edit">
+                                                <i class="fa-solid fa-pen-to-square"></i> Editar consulta
+                                            </a>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
